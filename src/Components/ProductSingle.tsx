@@ -5,8 +5,18 @@ import { ToastContainer, toast } from "react-toastify";
 import { AiFillStar } from "react-icons/ai";
 import 'sweetalert2/dist/sweetalert2.min.css';
 
-const ProductSingle = ({ data }) => {
-  const { _id, title, oldPrice, price, image, category, isNew, description, rating } = data;
+interface Product {
+  _id: string;
+  title: string;
+  oldPrice: number;
+  price: number;
+  image: string;
+  rating: number;
+  description: string;
+}
+
+const ProductSingle: React.FC<{ data: Product }> = ({ data }) => {
+  const { title, oldPrice, price, image, rating } = data;
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartData = useSelector((state: any) => state.cart.cartData);
@@ -67,7 +77,7 @@ const ProductSingle = ({ data }) => {
             );
 
             const alreadyInCart = cartData.find(
-              (item: any) => item._id === data._id
+              (item: Product) => item._id === data._id
             )
             if (alreadyInCart) {
               toast.warning(`${data.title} is already in cart`)
@@ -86,9 +96,9 @@ const ProductSingle = ({ data }) => {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>

@@ -1,6 +1,6 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { BsArrowBarRight } from 'react-icons/bs'
 const NavBar = () => {
 
