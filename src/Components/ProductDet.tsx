@@ -91,7 +91,6 @@ const ProductDet = () => {
                       title: product.title,
                       image: product.image,
                       price: product.price,
-                      category: product.category,
                       quantity: qnt,
                       description: product.description,
                       rating: product.rating,

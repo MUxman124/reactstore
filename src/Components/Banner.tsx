@@ -39,15 +39,22 @@ const Banner = () => {
           <img className='w-screen h-full object-cover' src={data[3]} alt='' />
         </div>
 
-        <div className='absolute bottom-40 left-0 right-0 w-fit mx-auto flex gap-8  '>
-          <div onClick={prevSlide} className='w-14 h-12 border-[1px] border-gray-700 flex items-center justify-center
-          hover:cursor-pointer hover:bg-gray-500 hover:text-white active:bg-gray-900 duration-300'>
+        <div className='absolute bottom-40 left-0 right-0 w-fit mx-auto flex gap-8 md:hidden  '>
+          <div onClick={prevSlide}  className="w-14 h-12 border-[1px] border-gray-700 hidden items-center justify-center
+  hover:cursor-pointer hover:bg-gray-500 hover:text-white active:bg-gray-900 duration-300 md:flex"
+          >
             <AiOutlineArrowLeft />
           </div>
-          <div onClick={nextSlide} className='w-14 h-12 border-[1px] border-gray-700 flex items-center justify-center
-          hover:cursor-pointer hover:bg-gray-500 hover:text-white active:bg-gray-900 duration-300'>
+          <div
+            onClick={nextSlide}
+            className="w-14 h-12 border-[1px] border-gray-700 hidden items-center justify-center
+  hover:cursor-pointer hover:bg-gray-500 hover:text-white active:bg-gray-900 duration-300 md:flex"
+          >
             <AiOutlineArrowRight />
           </div>
+
+
+
         </div>
 
       </div>

@@ -72,21 +72,24 @@ const ProductSingle: React.FC<{ data: Product }> = ({ data }) => {
                 image: data.image,
                 price: data.price,
                 quantity: 1,
-                description: data.description
+                description: data.description,
+                rating: data.rating,
+            
+
               })
             );
 
             const alreadyInCart = cartData.find(
               (item: Product) => item._id === data._id
-            )
+            );
             if (alreadyInCart) {
-              toast.warning(`${data.title} is already in cart`)
-            }
-            else {
-              toast.success(`${data.title} is added`)
+              toast.warning(`${data.title} is already in cart`);
+            } else {
+              toast.success(`${data.title} is added`);
             }
           }}
         >
+
           <span className="absolute -end-full transition-all group-hover:end-4">
             <svg
               className="h-5 w-5 rtl:rotate-180"
